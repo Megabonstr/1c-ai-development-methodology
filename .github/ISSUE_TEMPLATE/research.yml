@@ -1,0 +1,56 @@
+name: Bounded research
+description: Resolve one material unknown without turning research into implementation.
+title: "[RESEARCH] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Research starts from one explicit UNKNOWN and stops when the blocked decision has enough evidence.
+
+  - type: textarea
+    id: unknown
+    attributes:
+      label: Exact UNKNOWN / question
+      description: One material fact that is not yet proven.
+    validations:
+      required: true
+
+  - type: textarea
+    id: blocked_decision
+    attributes:
+      label: Decision blocked by this unknown
+      description: What design, implementation, compatibility, or acceptance decision needs this evidence?
+    validations:
+      required: true
+
+  - type: textarea
+    id: known_evidence
+    attributes:
+      label: Already-known evidence
+      description: Current project facts or exact evidence handles that must not be re-researched.
+    validations:
+      required: false
+
+  - type: textarea
+    id: source_bounds
+    attributes:
+      label: Source packet / source classes
+      description: Exact starting handles and the allowed bounded source classes.
+    validations:
+      required: true
+
+  - type: textarea
+    id: forbidden_expansion
+    attributes:
+      label: Forbidden scope expansion
+      description: Adjacent research, repositories, histories, implementation, or runtime actions that are out of scope.
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Required output / evidence / acceptance
+      description: Exact answer shape, evidence handles, remaining UNKNOWN handling, and decision this research must enable.
+    validations:
+      required: true

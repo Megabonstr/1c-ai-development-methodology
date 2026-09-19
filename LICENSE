@@ -1,0 +1,45 @@
+# Licensing
+
+Copyright © 2026 Megabonstr and contributors.
+
+This repository uses two licenses depending on file location and purpose.
+
+## MPL-2.0 - machine/executable methodology layer
+
+The following paths are licensed under the Mozilla Public License 2.0:
+
+- `.1c-ai/**`
+- `.agents/**`
+- `.github/**`
+- `scripts/**`
+- `AGENTS.md`
+- `AGENT_START.txt`
+- `CLAUDE.md`
+- `GEMINI.md`
+
+See [LICENSE-CODE](LICENSE-CODE).
+
+Official license:
+https://www.mozilla.org/MPL/2.0/
+
+## CC BY-SA 4.0 - documentation and human-readable methodology
+
+The following paths are licensed under Creative Commons Attribution-ShareAlike 4.0 International:
+
+- `README.md`
+- `CONTRIBUTING.md`
+- `docs/**`
+- `sources/**`
+
+See [LICENSE-DOCS](LICENSE-DOCS).
+
+Official license:
+https://creativecommons.org/licenses/by-sa/4.0/
+
+## License and notice files
+
+`LICENSE`, `LICENSE-CODE`, `LICENSE-DOCS` and `NOTICE.md` may be reproduced as needed to preserve licensing, attribution and compliance information.
+
+## Third-party material
+
+Third-party projects, linked sources, quoted material and referenced implementations remain subject to their own licenses and terms. Inclusion in `sources/SOURCES.md` or `docs/ru/USEFUL_LINKS.md` does not relicense third-party material under this repository's licenses.

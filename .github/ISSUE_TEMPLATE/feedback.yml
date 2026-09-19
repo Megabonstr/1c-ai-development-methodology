@@ -1,0 +1,75 @@
+name: Ошибка, предложение или критика
+description: Сообщить о проблеме, предложить улучшение или привести реальный контрпример.
+title: ""
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за обратную связь.
+
+        Перед заполнением прочитайте [правила оформления Issues](../../CONTRIBUTING.md).
+        Не публикуйте клиентские данные, закрытые исходники, пароли, токены и другую конфиденциальную информацию.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Тип обращения
+      options:
+        - Ошибка или противоречие
+        - Предложение по улучшению
+        - Реальный контрпример к правилу методики
+        - Проблема документации
+        - Другое
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Что сейчас не так
+      description: Опишите проблему или ситуацию своими словами. Для контрпримера лучше привести реальный сценарий.
+      placeholder: |
+        Сейчас...
+        В реальной работе это приводит к...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Какой результат вы ожидаете
+      description: Опишите желаемое поведение или результат. Не обязательно предлагать техническую реализацию.
+      placeholder: |
+        Хотелось бы...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Контекст, версия и доказательства
+      description: При необходимости укажите версию репозитория, 1С/БСП/EDT/MCP, шаги воспроизведения, ссылки на стандарт, статью, код или другой источник.
+      placeholder: |
+        Версия/ревизия:
+        Сценарий:
+        Источник/ссылка:
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Предлагаемый вариант решения
+      description: Необязательно. Если есть идея реализации, опишите её как вариант, а не как обязательный путь.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Перед отправкой
+      options:
+        - label: Я проверил(а), что среди Issues нет очевидного дубля.
+          required: true
+        - label: В сообщении нет клиентских данных, секретов, закрытого кода или другой конфиденциальной информации.
+          required: true

@@ -1,0 +1,98 @@
+1C_AI_AGENT_START_V1
+
+THIS FILE IS FOR AI AGENTS. DO NOT READ README.md unless the task explicitly edits human docs.
+
+PRE-INSTALL EVALUATION / ADOPTION
+If the user gives this methodology URL/ref and asks whether/how to adopt it into another project, no TaskHandle is required. Read .1c-ai/core/ADOPTION.md, inspect the target project read-only, and do not write without explicit authorization.
+
+ROLE ENTRY
+Coordinator Main: raw/noisy intent -> TASK_INTAKE/framing/research only as needed -> freeze/correct durable semantic Task Contract -> exact handoff.
+Local Main: frozen TaskHandle -> task-bootstrap -> bounded technical discovery/implementation/review/verification -> local verdict/evidence.
+Local Main does not reload raw conversation, philosophy, broad history, or semantic decision context by default.
+One physical agent may switch roles sequentially; no new chat is required.
+
+DEFAULT READ PATH
+1. Resolve the active route and exact durable handle available for that phase; pre-install evaluation may start from the methodology URL/ref without a TaskHandle.
+2. Read PROJECT_AI.md when it exists and project-specific identity/constraints are materially needed but not already supplied.
+3. Read only the exact core owner section(s) required by the current step.
+4. Use .1c-ai/router/ROUTER.md only when workflow/profile/delegation is not already fixed.
+5. Load at most one primary workflow skill and one execution profile when needed.
+6. Resolve exact source/version/path/symbol/evidence handles. For Git-backed projects prefer repository/ref/SHA handles. Do not roam history/repos/KB.
+
+GIT DEFAULT FOR THIS REPOSITORY
+main    = stable accepted state
+preprod = integration/release-candidate state
+feature/<task> = one bounded task, created from current preprod
+
+Normal delivery:
+Issue -> feature from preprod -> implement -> focused checks -> PR to preprod
+-> integration/applicable full checks on preprod -> PR preprod to main
+-> main only when required gates are green -> close Issue.
+No ordinary direct feature -> main delivery.
+
+MERGE STRATEGY
+feature -> preprod: squash allowed/preferred for one bounded task.
+preprod -> main: normal merge preserving ancestry; DO NOT squash/rebase promotion.
+After successful main push CI: fast-forward preprod to accepted main SHA.
+Never force-reset branch history for routine synchronization.
+
+ORCHESTRATION
+Human Owner + Coordinator Main own product/architecture/task contract/final acceptance/closeout for one explicit CoordinationScope.
+Every active task has exactly one OwningCoordinator. Scope may be the whole project or one bounded project/domain area.
+Coordinator Main may be cloud/local/desktop/manual-compatible; it owns the authoritative context map, not a full-scope preload.
+One Local Main owns local implementation, review, critic pass, verification integration and local verdict.
+Ordinary compile/test/metadata/runtime correction stays local. Do not ping-pong to Coordinator Main.
+Subagents are optional bounded specialists; read-only by default. Exact isolated write only when explicitly delegated.
+
+SOURCE-FIRST
+Current project first.
+If mechanism is standard 1C: prefer the applicable standard configuration/BSP implementation and supported public program interface.
+Do not depend on BSP internal/service methods as stable public API; they may be donor/reference for project-owned adaptation.
+Use official standards and bounded proven references only when needed.
+Custom implementation fills the remaining gap.
+
+DELIVERY DISCIPLINE
+Prefer the smallest proven solution that satisfies frozen semantics/scope/safety/acceptance.
+Do not add frameworks/generalization/refactors/test infrastructure without a concrete current need.
+If a small task expands materially, run a scope/complexity check and cut optional work.
+When required acceptance passes: STOP. Record adjacent improvements as separate Issues.
+
+1C TARGET PREFLIGHT
+For managed-form/data-mapping/filter tasks, do not infer target identity from UI names.
+Before first material implementation, resolve only load-bearing OWNED_TARGETS/DataPath/Type/ExecutionContext/Cardinality/Action/MissingTargetPolicy/FilterContract as applicable. Add explicit PRESERVE/DO_NOT_TOUCH only for a real material risk boundary.
+Use .1c-ai/profiles/1c-common/TASK_PREFLIGHT.md when needed.
+One task = one business outcome; ordinary compile/context/API/runtime corrections are internal Local Main iterations.
+
+VERIFICATION PROFILE
+Default: STANDARD.
+FAST_CLIENT_SLICE = narrow urgent bounded client behavior: early safe native/runtime proof, only justified iteration tests, default new-test budget 0-3, one final focused regression + compact result/evidence packet.
+HIGH_RISK = destructive/migration/RLS/security/global/high-blast-radius work: broader review/regression/rollback evidence as required.
+WORKING_NATIVE_RESULT speeds safe native proof but never bypasses rights/safety/required evidence.
+Do not rerun broad suites/full parity/full reports after every micro-fix. Use .1c-ai/core/VERIFICATION_PROFILES.md when needed.
+
+EVIDENCE CODES
+SOURCE  = source/design mechanism confirmed
+STATIC  = non-runtime validation
+TEST    = automated focused tests
+BUILD   = artifact/build succeeded
+DEPLOY  = applied to target environment
+RUNTIME = behavior executed in runtime
+NATIVE  = real client/IDE/UI behavior observed
+USER_ACCEPTANCE = human acceptance
+States: PASS | FAIL | NOT_REQUIRED | UNKNOWN.
+Never promote one evidence class into another.
+
+TOKEN DIET
+Prefer exact handles over pasted context.
+Do not preload README, all Issues, all skills, all profiles, donor trees or old reports.
+Token Diet covers INPUT and OUTPUT cost.
+Local Main default during ordinary bounded work = SILENT_WORK: do not narrate routine reads, edits, tool calls, compile/test cycles or internal planning.
+Emit intermediate output only for material STOP/ASK, route-changing failure/UNKNOWN, or a required handoff; otherwise return one compact final result.
+Agent-to-agent output is compact technical English. Human-facing output is concise Russian by default. Store detailed evidence artifacts once when required and pass their exact handles.
+
+STOP/ASK
+Investigate cheap technical facts first.
+Escalate only for material product/semantic/architecture/safety/authority/scope/acceptance decisions.
+Missing proof stays UNKNOWN.
+
+When more detail is needed, open only the exact owning section under .1c-ai/core/, one routed skill/profile, and exact evidence.

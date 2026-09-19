@@ -1,0 +1,151 @@
+name: Bounded implementation
+description: Create one bounded implementation, correction, documentation, or maintenance task.
+title: "[IMPLEMENT] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Default repository flow: create one feature branch from current preprod, merge feature -> preprod after focused checks, then preprod -> main after integration checks.
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: One concrete result this task must produce.
+      placeholder: Describe the accepted end result, not the whole project history.
+    validations:
+      required: true
+
+  - type: textarea
+    id: git_identity
+    attributes:
+      label: Repository / base / branch / Local Main
+      description: Exact repository, accepted integration base, feature branch, and Local Main ownership.
+      placeholder: |
+        Repository: Megabonstr/1c-ai-development-methodology
+        Base: preprod
+        Branch: feature/<issue>-<short-name>
+        Local Main:
+    validations:
+      required: true
+
+  - type: textarea
+    id: coordination_owner
+    attributes:
+      label: Coordination scope / owning coordinator
+      description: Persist the task's CoordinationScope and exactly one OwningCoordinator, or point to the explicit durable project default that already contains both.
+      placeholder: |
+        CoordinationScope: whole project | <bounded project/domain area> | inherit PROJECT_AI.md
+        OwningCoordinator: Coordinator Main | <explicit coordinator identity> | inherit PROJECT_AI.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Positive scope / owned target
+      description: What business outcome and exact files/objects/modules/documents this task owns. Include directly necessary related implementation; do not list the complement of scope.
+    validations:
+      required: true
+
+  - type: textarea
+    id: mechanism
+    attributes:
+      label: Required mechanism
+      description: Accepted implementation route or execution profile when already known.
+    validations:
+      required: false
+
+  - type: textarea
+    id: source_packet
+    attributes:
+      label: Source packet
+      description: Exact repository/ref/path/symbol/section handles and what each source proves. Do not paste broad donor bodies.
+    validations:
+      required: false
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Material constraints / exceptional prohibitions
+      description: Optional. Only concrete invariants, safety/compatibility limits, or high-cost boundaries the executor could plausibly cross. Do not enumerate ordinary unrelated fields/objects.
+    validations:
+      required: false
+
+  - type: textarea
+    id: one_c_target_contract
+    attributes:
+      label: 1C target / field ownership contract
+      description: For managed forms, mappings, references or filtered choices. Freeze exact targets only when materially relevant.
+      placeholder: |
+        OWNED_TARGETS:
+        - TargetID:
+          UIElement:
+          DataPath:
+          Type:
+          ExecutionContext:
+          Cardinality:
+          Action:
+          Source:
+        DO_NOT_TOUCH: <optional material exception only; omit otherwise>
+        MissingTargetPolicy:
+        FilterContract:
+    validations:
+      required: false
+
+  - type: textarea
+    id: complexity_boundary
+    attributes:
+      label: Complexity boundary / allowed generalization
+      description: Smallest acceptable solution and any framework/refactor/generalization/test-infrastructure explicitly allowed. Leave optional unless materially relevant.
+      placeholder: |
+        Minimal result:
+        Explicitly allowed generalization:
+        Defer to separate Issue:
+    validations:
+      required: false
+
+  - type: textarea
+    id: verification_profile
+    attributes:
+      label: Verification profile / priority / budget
+      description: Choose cadence/depth proportional to risk. Defaults are STANDARD / NORMAL when omitted.
+      placeholder: |
+        VerificationProfile: FAST_CLIENT_SLICE | STANDARD | HIGH_RISK
+        Priority: WORKING_NATIVE_RESULT | NORMAL | SAFETY_FIRST
+        TestBudget:
+        ParityCadence:
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance gates
+      description: Required SOURCE/STATIC/TEST/BUILD/DEPLOY/RUNTIME/NATIVE/USER_ACCEPTANCE evidence as applicable.
+    validations:
+      required: true
+
+  - type: textarea
+    id: native_acceptance
+    attributes:
+      label: Native / user acceptance
+      description: Exact observable acceptance actions when source/static automation is not sufficient.
+    validations:
+      required: false
+
+  - type: textarea
+    id: stop_ask
+    attributes:
+      label: STOP / ASK boundary
+      description: Material decisions or unsafe conditions that must return to Coordinator Main / Human Owner.
+    validations:
+      required: true
+
+  - type: textarea
+    id: delivery
+    attributes:
+      label: Delivery / evidence destination
+      description: Expected feature -> preprod PR, evidence destination, and any preprod -> main release gate.
+    validations:
+      required: true
