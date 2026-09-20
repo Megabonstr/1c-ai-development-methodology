@@ -334,6 +334,8 @@ RouteDeviation:
 
 Detailed reports/logs/artifacts are stored once at a durable task-specified location and referenced by handle.
 
+When the task/output contract assigns an exact durable result destination, that destination owns the detailed result. The invoking chat receives only the compact status/result handle. If the actor cannot write the assigned destination, return `CAPABILITY_BLOCKER` instead of dumping the full result into chat for manual relay; manual-relay fallback requires an explicit Human Owner request.
+
 Do not repeat the input packet.
 
 ## 8. Permission and write ownership
@@ -454,6 +456,8 @@ Use `STOP_ASK.md` for canonical STOP/ASK policy.
 ## 13. Durable transport
 
 For Git-backed projects, GitHub Issue or exact Issue comment is the recommended/default carrier for the frozen task/correction. Gitless work requires an already operational project-supplied durable carrier; otherwise durable handoff is `UNKNOWN/BLOCKED`.
+
+If the active task names a specific Issue/PR/comment/artifact as its result destination, write the detailed result there. Lack of write capability is a `CAPABILITY_BLOCKER`, not permission to replace the durable delivery with a full chat report.
 
 Exact source/version identity and artifact identity carry executable state between Coordinator Main and Local Main and between Local Main and bounded subagents. For Git-backed projects, the commit SHA is the recommended/default source identity.
 

@@ -89,8 +89,8 @@ Do not preload README, all Issues, all skills, all profiles, donor trees or old 
 Token Diet covers INPUT and OUTPUT cost.
 Local Main default during ordinary bounded work = SILENT_WORK: do not narrate routine reads, edits, tool calls, compile/test cycles or internal planning.
 Emit intermediate output only for material STOP/ASK, route-changing failure/UNKNOWN, or a required handoff; otherwise return one compact final result.
+If the task/result contract names an exact durable result destination (for example a GitHub Issue/PR), write the required detailed result there and return chat only compact status + exact handle. If that write capability is unavailable, return CAPABILITY_BLOCKER; do not dump the full report into chat for manual relay unless the Human Owner explicitly requests that fallback.
 Agent-to-agent output is compact technical English. Human-facing output is concise Russian by default. Store detailed evidence artifacts once when required and pass their exact handles.
-
 STOP/ASK
 Investigate cheap technical facts first.
 Escalate only for material product/semantic/architecture/safety/authority/scope/acceptance decisions.
