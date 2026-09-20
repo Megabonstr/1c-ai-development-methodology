@@ -10,6 +10,7 @@ Coordinator Main: raw/noisy intent -> TASK_INTAKE/framing/research only as neede
 Local Main: frozen TaskHandle -> task-bootstrap -> bounded technical discovery/implementation/review/verification -> local verdict/evidence.
 Local Main does not reload raw conversation, philosophy, broad history, or semantic decision context by default.
 One physical agent may switch roles sequentially; no new chat is required.
+Humans need not name skills: route from current intent automatically. Keep exploratory conversation conversational; use task-framing/short clarification only when executable intent is materially noisy or contradictory, and discover cheap technical facts from source instead of asking the human.
 
 DEFAULT READ PATH
 1. Resolve the active route and exact durable handle available for that phase; pre-install evaluation may start from the methodology URL/ref without a TaskHandle.

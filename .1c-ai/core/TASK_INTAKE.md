@@ -28,6 +28,23 @@ Use task framing only when input is materially raw/noisy/unclear, for example:
 - a real product/architecture/data/safety choice remains;
 - the human explicitly asks to formulate the task first.
 
+Informal wording alone is not a framing trigger. Exploratory/creative discussion may remain discussion until it is being converted into executable work.
+
+## Interactive clarification
+
+When executable intent contains material contradictions, an unmarked change of direction, several competing goals, or unclear acceptance semantics, Coordinator Main may use a short clarification dialogue inside task framing.
+
+Rules:
+- the human does not need to name a skill or internal mode;
+- extract what is already clear before asking anything;
+- ask the first material question in plain language, normally one at a time;
+- when useful, offer a few concrete choices plus an open alternative;
+- do not ask for a cheap technical fact that current project/source can resolve;
+- if a new answer appears to replace an earlier decision, make the supersession explicit rather than guessing;
+- stop questioning as soon as Goal, positive scope, material constraints and acceptance are sufficient for the next route.
+
+This dialogue does not add a new readiness state. It resolves ambiguity before the existing `READY | RESEARCH_NEEDED | HUMAN_DECISION_NEEDED | EXPLORATION` result.
+
 ## Framing output
 
 Allowed readiness results: `READY`, `RESEARCH_NEEDED`, `HUMAN_DECISION_NEEDED`, `EXPLORATION`.
