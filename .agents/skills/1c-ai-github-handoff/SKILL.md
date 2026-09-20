@@ -61,6 +61,8 @@ For a subagent, prefer the fresh bounded delegation packet in `ORCHESTRATION.md`
 
 Use one exact Issue comment when a correction or next-step delta is enough.
 
+When the task/output contract assigns a GitHub Issue, PR, or exact comment as the result destination, write the required detailed result there and return to the invoking chat only a compact status + exact handle. If GitHub write is unavailable, return `CAPABILITY_BLOCKER`; do not dump the full result into chat for manual copy/paste unless the Human Owner explicitly requests that fallback.
+
 Do not use this skill to turn compile/test/debug iterations into repeated Coordinator Main requests.
 
 Do not replay chat history, broad Issue history, donor bodies, or already-addressable source content.
