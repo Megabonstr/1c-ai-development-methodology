@@ -66,6 +66,8 @@ The closeout is an index/projection over existing task, source and evidence stat
 
 For Git-backed work, the task's GitHub Issue/comment is the normal durable carrier. Gitless closeout is available only when the adopting project already supplies an operational durable carrier; this package does not ship that backend. Otherwise durable closeout remains `UNKNOWN/BLOCKED`.
 
+If the task names an exact Issue/PR/comment as the closeout/result destination, persist the authoritative closeout there and return to chat only a compact status + exact handle. If that destination cannot be written with available capabilities, return `CAPABILITY_BLOCKER`; do not paste the full closeout into chat for manual relay unless the Human Owner explicitly requests that fallback.
+
 ## Workflow
 
 1. Consume the exact Local Main verdict/result/evidence packet.
