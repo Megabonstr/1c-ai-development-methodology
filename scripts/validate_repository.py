@@ -35,6 +35,7 @@ REQUIRED_PATHS = [
     ".1c-ai/profiles/1c-xml-configurator/PROFILE.md",
     "docs/ru/GIT_GITHUB_FLOW.md",
     "docs/ru/BEGINNER_GUIDE.md",
+    "docs/ru/AI_COMMUNICATION.md",
     "docs/ru/EVIDENCE_MODEL.md",
     "docs/ru/VERIFICATION_PROFILES.md",
     "docs/ru/ARCHITECTURE.md",
@@ -193,6 +194,7 @@ def validate_agent_entry(errors: list[str]) -> None:
         "VERIFICATION PROFILE",
         "EVIDENCE CODES",
         ".1c-ai/core/ADOPTION.md",
+        "Humans need not name skills",
     ):
         if token not in text:
             fail(errors, f"AGENT_START.txt missing compact contract token: {token}")
@@ -223,6 +225,7 @@ def validate_human_readme(errors: list[str]) -> None:
     human_targets = (
         "docs/ru/GETTING_STARTED.md",
         "docs/ru/BEGINNER_GUIDE.md",
+        "docs/ru/AI_COMMUNICATION.md",
         "docs/ru/GIT_GITHUB_FLOW.md",
         "docs/ru/EVIDENCE_MODEL.md",
         "docs/ru/VERIFICATION_PROFILES.md",
@@ -864,9 +867,42 @@ def validate_task_framing_route(errors: list[str]) -> None:
     router = ROOT / ".1c-ai" / "router" / "ROUTER.md"
     if router.is_file():
         text = read_text(router, errors)
-        token = ".agents/skills/1c-ai-task-framing/SKILL.md"
-        if token not in text:
-            fail(errors, "router must reference 1c-ai-task-framing")
+        for token in (
+            ".agents/skills/1c-ai-task-framing/SKILL.md",
+            "Skill selection is agent-owned",
+            "clarification dialogue",
+        ):
+            if token not in text:
+                fail(errors, f"router missing task-framing/intent-routing token: {token!r}")
+
+    skill = ROOT / ".agents" / "skills" / "1c-ai-task-framing" / "SKILL.md"
+    if skill.is_file():
+        text = read_text(skill, errors)
+        for token in (
+            "## Route ownership",
+            "## Clarification dialogue mode",
+            "The Human Owner does not need to say",
+            "Do not invoke framing merely because the user is conversational",
+        ):
+            if token not in text:
+                fail(errors, f"{skill.relative_to(ROOT)} missing clarification token: {token!r}")
+
+    human = ROOT / "docs" / "ru" / "AI_COMMUNICATION.md"
+    if human.is_file():
+        text = read_text(human, errors)
+        for token in (
+            "Вам не нужно знать названия навыков",
+            "Режим уточнения задачи",
+            "Коррекция:",
+            "Что написать агенту",
+        ):
+            if token not in text:
+                fail(errors, f"{human.relative_to(ROOT)} missing human communication token: {token!r}")
+
+    for rel in ("README.md", "docs/ru/BEGINNER_GUIDE.md", "docs/ru/TOKEN_DIET.md"):
+        path = ROOT / rel
+        if path.is_file() and "AI_COMMUNICATION.md" not in read_text(path, errors):
+            fail(errors, f"{rel} must link the human AI communication guide")
 
 
 def validate_deep_research(errors: list[str]) -> None:
