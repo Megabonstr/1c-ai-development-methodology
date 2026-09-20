@@ -51,6 +51,22 @@ A long-lived coordinator should reconstruct continuity from `PROJECT_AI.md`, the
 
 Coordinator Main does not preload the whole repository, full donor repositories, all research bodies, all Issue histories, all skills/profiles, Local Main debug narration, or raw runtime logs when an exact evidence handle is sufficient.
 
+## Human input / semantic noise
+
+Token Diet applies before execution too.
+
+Natural conversation, voice input and exploratory thinking may be verbose when that helps the human think. Do not optimize for minimum characters at the cost of ambiguity.
+
+Before executable handoff:
+- normalize raw transcript/history once instead of forwarding it wholesale;
+- remove abandoned alternatives, repeated filler and already-known context from the downstream packet;
+- preserve necessary reasoning/constraints by exact handle when they still matter;
+- if the human changes a decision, carry the current rule plus explicit supersession instead of two competing full discussions;
+- treat contradiction/unclear precedence as more expensive than a few extra explanatory words;
+- keep several unrelated goals out of one execution packet.
+
+The target is semantic density and unambiguous current intent, not robotic shorthand.
+
 ## Local Main execution context
 
 Local Main receives the executable task, not the process that created it.
