@@ -28,11 +28,13 @@ Coordinator Main owns intake/readiness, semantic task state, material decision r
 
 | Coordinator intent | Generic skill / owner | Core authority |
 |---|---|---|
-| Normalize raw/noisy/materially unclear human intent and decide readiness | `.agents/skills/1c-ai-task-framing/SKILL.md` | Task Intake + Orchestration + Token Diet |
+| Normalize raw/noisy/materially unclear executable intent, including short clarification dialogue when needed | `.agents/skills/1c-ai-task-framing/SKILL.md` | Task Intake + Orchestration + Token Diet |
 | Resolve one bounded fact that blocks a Coordinator decision | `.agents/skills/1c-ai-source-first-research/SKILL.md` - Coordinator-decision mode | Source First + Orchestration |
 | Run broad multi-source architecture/product/technology research | `.agents/skills/1c-ai-deep-research/SKILL.md` - Coordinator primary / Researcher delegated | Source First + Token Diet + Evidence Model + Orchestration |
 | Resolve adopting-project instruction/knowledge ownership or initialization layout | no separate skill | Project Structure + Task Contract |
 | Freeze/correct task semantics or route a material Human Owner decision | no separate skill | Task Contract + Orchestration + STOP/ASK |
+
+Skill selection is agent-owned: the Human Owner does not need to know or name skill identifiers. Do not formalize ordinary exploratory conversation merely because it is informal. When the conversation is becoming executable work and the current intent is materially noisy, contradictory, or unclear, route to task framing and use its clarification dialogue as needed.
 
 Cheap technical facts are checked automatically. Do not ask the Human Owner whether to research when one bounded lookup can resolve the fact. Ask only when a real product/architecture/data/safety/acceptance choice or explicit authority remains.
 
