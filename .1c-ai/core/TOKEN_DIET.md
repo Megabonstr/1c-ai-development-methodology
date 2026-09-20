@@ -161,4 +161,8 @@ Emit intermediate output only when a material STOP/ASK boundary is reached, a Hu
 
 Otherwise continue working and return one compact final verdict with exact handles.
 
+If the task/result contract names an exact durable result destination (for example a GitHub Issue, PR, comment, or task-owned artifact), that destination is authoritative: persist the required detailed result there and return to chat only a compact status plus the exact handle.
+
+If the required durable destination cannot be written with the available capabilities, return `CAPABILITY_BLOCKER` naming the blocked target/capability. Do not substitute a full report in chat for manual copy/paste unless the Human Owner explicitly requests that fallback.
+
 Do not duplicate long logs/reports in chat. Store required detail once in durable state and pass its handle.
