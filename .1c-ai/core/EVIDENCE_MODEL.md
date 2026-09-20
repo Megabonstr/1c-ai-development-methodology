@@ -1,6 +1,10 @@
 # Evidence Model
 
-Different checks prove different things. Keep their states separate.
+Verification itself is ordinary engineering practice. This model does not introduce a new requirement to "check that the task works"; the Task Contract and verification profile already determine what must be checked for the task.
+
+Its purpose is durable handoff and reporting: record exactly what kind of check or observation exists, and on which source/artifact/environment, so a later agent or person does not flatten different facts into a vague "verified" state or infer a stronger result than was actually observed.
+
+Different checks answer different questions. Keep their states separate only when materially useful for task acceptance, handoff, or history.
 
 Verification depth/cadence is selected by `.1c-ai/core/VERIFICATION_PROFILES.md`.
 
