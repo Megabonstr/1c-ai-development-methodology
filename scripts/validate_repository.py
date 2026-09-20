@@ -195,6 +195,7 @@ def validate_agent_entry(errors: list[str]) -> None:
         "EVIDENCE CODES",
         ".1c-ai/core/ADOPTION.md",
         "Humans need not name skills",
+        "CAPABILITY_BLOCKER",
     ):
         if token not in text:
             fail(errors, f"AGENT_START.txt missing compact contract token: {token}")
@@ -439,6 +440,8 @@ def validate_role_boundaries(errors: list[str]) -> None:
             "DoNotTouch / ProhibitedChanges",
             "optional and sparse",
             "Positive scope is the default boundary.",
+            "CAPABILITY_BLOCKER",
+            "durable result destination",
         ):
             if token not in text:
                 fail(errors, f"{token_diet.relative_to(ROOT)} missing role-context section: {token!r}")
@@ -463,6 +466,7 @@ def validate_role_boundaries(errors: list[str]) -> None:
             "one authoritative compact closeout",
             ".agents/skills/1c-ai-task-closeout/SKILL.md",
             "small directly necessary adjacent technical changes",
+            "CAPABILITY_BLOCKER",
         ):
             if token not in text:
                 fail(errors, f"{orchestration.relative_to(ROOT)} missing lifecycle-closeout token: {token!r}")
