@@ -79,7 +79,7 @@ GitHub, EDT и MCP не являются универсальными требо
 
 ## Что подключается сегодня на самом деле
 
-Автоматического установщика сейчас нет.
+Полного автоматического установщика сейчас нет. Для уже установленных закреплённых Git-копий действует [отдельный безопасный маршрут обновления](PROJECT_REFRESH.md).
 
 Текущий режим - **ручная закреплённая копия точной ревизии** (`MANUAL_PINNED_COPY`) или agent-assisted selective adoption.
 
@@ -170,9 +170,9 @@ MethodologyPackage: Megabonstr/1c-ai-development-methodology @ <exact 40-char SH
 
 ### Безопасный installer / update / uninstall
 
-Детерминированного installer/update/uninstall с manifest/hash ownership пока нет. Это отдельная задача [#2](https://github.com/Megabonstr/1c-ai-development-methodology/issues/2).
+Полного installer/update/uninstall с установленным manifest/hash ownership пока нет. Для уже закреплённых Git-копий существует [conflict-checked update helper](PROJECT_REFRESH.md); полная задача [#2](https://github.com/Megabonstr/1c-ai-development-methodology/issues/2) остаётся открытой.
 
-Следствие: первая ручная установка возможна, а повторное обновление нельзя выдавать за безопасную автоматическую операцию.
+Следствие: первая установка остаётся ручной; повторное обновление допустимо только после сверки старой закреплённой версии, текущих файлов и нового commit SHA. Нельзя перезаписывать локально изменённые общие файлы.
 
 ### Работаю без Git/GitHub - что возможно сейчас?
 
@@ -230,6 +230,6 @@ Submodule, symlink и junction могут добавлять лишнюю сло
 - **Хотите только сравнить?** Ничего не меняйте; попросите агента провести read-only оценку.
 - **Новый проект?** Используйте [быстрый старт](GETTING_STARTED.md) и фиксируйте точный SHA.
 - **Зрелый проект?** Сначала ищите пересечения и конфликт владельцев; выборочное подключение допустимо.
-- **Installer/update/uninstall?** Пока нет, [#2](https://github.com/Megabonstr/1c-ai-development-methodology/issues/2).
+- **Первичная установка/удаление?** По-прежнему вручную, см. [#2](https://github.com/Megabonstr/1c-ai-development-methodology/issues/2). **Обновление уже установленной Git-копии?** См. [отдельный маршрут](PROJECT_REFRESH.md).
 - **Gitless backend?** Пока нет, [#1](https://github.com/Megabonstr/1c-ai-development-methodology/issues/1).
 - **GitHub/EDT/MCP обязательны?** Нет; конкретные инструменты выбираются по реальному проекту.
