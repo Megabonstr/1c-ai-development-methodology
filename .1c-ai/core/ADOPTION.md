@@ -6,12 +6,13 @@ Current product state:
 
 ```text
 AdoptionMode: MANUAL_PINNED_COPY
+ExistingGitPinnedRefreshHelper: SHIPPED_PLAN_APPLY
 InstallerUpdateUninstall: NOT_SHIPPED
 InstalledPackageValidator: NOT_SHIPPED
 GitlessDurableBackend: NOT_SHIPPED
 ```
 
-Installer/update/uninstall/manifest/hash automation is separate future work ([#2](https://github.com/Megabonstr/1c-ai-development-methodology/issues/2)). The Gitless durable-state backend is separate future work ([#1](https://github.com/Megabonstr/1c-ai-development-methodology/issues/1)). Do not invent either capability here.
+Full first-install/uninstall/manifest automation remains separate work ([#2](https://github.com/Megabonstr/1c-ai-development-methodology/issues/2)). Existing Git-backed pinned copies have a bounded three-way PLAN/APPLY refresh helper; see `.1c-ai/core/PACKAGE_REFRESH.md`. This is not a general installer or selective update engine. The Gitless durable-state backend remains separate work ([#1](https://github.com/Megabonstr/1c-ai-development-methodology/issues/1)).
 
 ## Entry condition
 
@@ -94,7 +95,8 @@ Root client adapters are project files unless the project explicitly authorizes 
 There is no shipped manifest/hash ownership database today. Therefore:
 
 - a first authorized pinned copy may be performed manually;
-- repeated update/uninstall must not be presented as deterministic or merge-safe;
+- repeated update of an existing pinned Git copy may use the separately documented conflict-checked refresh helper only when the current PROJECT_AI.md pin and both source commits are available;
+- unpinned/modified/mixed ownership and uninstall must not be presented as deterministic or merge-safe;
 - if managed package files already exist, compare/stop rather than overwrite blindly;
 - do not claim installer validation.
 
