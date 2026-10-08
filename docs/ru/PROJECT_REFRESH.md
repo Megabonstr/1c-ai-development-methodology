@@ -20,7 +20,10 @@ PROJECT_AI.md со строкой MethodologyPackage, а общие файлы �
 копией общей методологии. У EDT-MCP актуальную спецификацию инструментов
 задают установленная версия, её live guide/schema и upstream
 [DitriXNew/EDT-MCP](https://github.com/DitriXNew/EDT-MCP), а не устаревшие
-примеры из копий навыков.
+примеры из копий навыков. Отдельный набор бизнес-навыков EDT-MCP живёт в
+[agent/skills](https://github.com/DitriXNew/EDT-MCP/tree/master/agent/skills).
+Копии с локальными доработками нужно **сравнивать с точным upstream-тегом**,
+а не бездумно заменять: общий обновляющий скрипт их не трогает.
 
 ## Что передать агенту
 
