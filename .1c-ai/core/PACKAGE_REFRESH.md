@@ -39,6 +39,23 @@ prose. Current EDT-MCP tool guides and live schemas outrank copied examples.
 Do not distribute version-specific EDT-MCP tool instructions as a second
 canonical generic skill pack.
 
+### EDT-MCP business skills are a separate upstream-owned layer
+
+For a project using EDT-MCP, compare its `edt-mcp-project-*` and other `edt-mcp-*`
+skills with the applicable pinned upstream release of
+`DitriXNew/EDT-MCP/agent/skills/**` (router: `agent/ROUTER.md`).
+Do not infer ownership from a matching filename: the project's existing
+copy can contain accepted local safety procedures, project-source routes,
+verification handles or custom plugins. Treat such additions as overlays,
+not disposable duplicates. Use the live installed MCP tool guide/schema for
+parameters, especially where upstream changed form/metadata/DCS support.
+
+The generic Python helper intentionally does NOT mutate these skills. The
+agent must report `EDT_SKILL_RECONCILIATION=NOT_REQUIRED | REVIEWED | BLOCKED`
+with exact upstream tag/SHA, original target files, tested behaviors and any
+proposed separate targeted change. Never merge a plugin-fork custom tool's
+contract into the generic methodology as a fake upstream capability.
+
 ## Package revision and three-way safety
 
 Obtain an exact 40-character methodology source commit SHA. Do not use
