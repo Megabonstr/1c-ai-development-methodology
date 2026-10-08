@@ -16,11 +16,27 @@ methodology URL/ref
 -> manual adoption only if authorized
 ```
 
-Do not route this through task-bootstrap, require a pre-existing TaskHandle, or invent installer/update/uninstall behavior.
+Do not route initial adoption through task-bootstrap or require a pre-existing TaskHandle. Do not invent a general installer/uninstaller.
 
 The router does not create `CoordinationScope`, `OwningCoordinator`, product semantics, or acceptance meaning. Those belong to Coordinator Main / the durable Task Contract.
 
 Role separation is logical. One physical agent may act sequentially as Coordinator Main and Local Main when appropriate; a new chat/agent is not required for small work.
+
+## 0a. Existing pinned-package refresh
+
+For an explicit request to update the shared methodology in an existing Git-backed project:
+
+```text
+PROJECT_REFRESH_AGENT_START.txt
+-> .1c-ai/core/PACKAGE_REFRESH.md
+-> target current policy + PROJECT_AI.md pinned SHA
+-> NONE | SELECTIVE | FULL existing-package refresh
+-> conflict-checked PLAN (read only)
+-> approved APPLY on clean feature/* worktree only
+-> PR/delivery; local HEAD verification separately
+```
+
+The updater is NOT a general installer/uninstaller or a selective merge engine. Preserve project-owned instructions and non-1c-ai-* skills. Do not require product-task bootstrap for this maintenance routing.
 
 ## 1. Coordinator Main - pre-execution
 
