@@ -15,6 +15,9 @@ START
    classify NONE/SELECTIVE/FULL. Never replace the owner's instructions.
 5. Verify the new source commit is accepted and reachable; no floating-branch
    copy. Current upstream plugin/tool guides win over old capability examples.
+6. In EDT-MCP projects, also compare any project-owned edt-mcp-* skills against
+   DitriXNew/EDT-MCP/agent/skills at the exact applicable release tag. Report
+   drift separately; preserve local overlays. Do not auto-copy that second pack.
 
 SAFE IMPLEMENTATION
 On a clean, isolated feature branch from the project's accepted integration
