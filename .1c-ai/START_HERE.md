@@ -10,7 +10,11 @@ A user may start with only this methodology repository URL/ref and an adopting p
 
 Route directly to `.1c-ai/core/ADOPTION.md`: resolve the exact methodology revision, inspect the adopting project, classify `NONE | SELECTIVE | FULL`, state `MANUAL_PINNED_COPY`, and request write permission only after the recommendation is clear.
 
-Do not invent installer/update/uninstall or a Gitless durable backend.
+Do not invent a general installer/uninstaller or a Gitless durable backend. Existing Git-backed pinned copies may use the bounded PLAN/APPLY refresh helper routed through `.1c-ai/core/PACKAGE_REFRESH.md`; the helper does not replace the adoption decision.
+
+## Existing-project package refresh
+
+When the user requests updating an already installed methodology package, route directly to `.1c-ai/core/PACKAGE_REFRESH.md` (agent entry: `PROJECT_REFRESH_AGENT_START.txt` in the methodology source repository). Inspect the target's canonical policy and prior MethodologyPackage pin before changing any files. This is package maintenance, not a normal product TaskHandle.
 
 ## Role entry
 
