@@ -78,7 +78,7 @@
 
 ## Шаг 3. Получите точную версию методики
 
-Текущий способ подключения - **ручная закреплённая копия точной ревизии** (`MANUAL_PINNED_COPY`). Автоматического безопасного installer/update/uninstall пока нет - это отдельная работа [#2](https://github.com/Megabonstr/1c-ai-development-methodology/issues/2).
+Первая установка остаётся **ручной закреплённой копией точной ревизии** (`MANUAL_PINNED_COPY`). Для уже установленных Git-копий есть [проверяемое обновление](PROJECT_REFRESH.md), но полный installer/uninstall пока не поставляется — это задача [#2](https://github.com/Megabonstr/1c-ai-development-methodology/issues/2).
 
 Поэтому перед копированием нужно знать полный commit SHA методики.
 
@@ -293,7 +293,7 @@ GitHub [Issue](GIT_GITHUB_FLOW.md#issue) - рекомендуемый вариа
 
 ## Что сейчас ещё не автоматизировано
 
-- installer/update/uninstall и manifest/hash-based безопасное обновление - [#2](https://github.com/Megabonstr/1c-ai-development-methodology/issues/2);
+- полный installer/uninstall и установленный manifest/hash-based ownership - [#2](https://github.com/Megabonstr/1c-ai-development-methodology/issues/2); для существующих Git-копий см. [проверяемое обновление](PROJECT_REFRESH.md);
 - пакетный Gitless durable-state backend - [#1](https://github.com/Megabonstr/1c-ai-development-methodology/issues/1).
 
 Поэтому сегодня безопасный путь - сначала **оценить**, затем явно разрешить изменения и фиксировать точный SHA установленной методики.
