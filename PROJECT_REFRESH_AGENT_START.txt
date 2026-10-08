@@ -1,0 +1,46 @@
+1C_AI_PROJECT_REFRESH_AGENT_START_V1
+
+PURPOSE
+Update an existing Git-backed 1C project to one exact accepted revision of
+Megabonstr/1c-ai-development-methodology. This is package maintenance, NOT a
+product/1C source change, installer, force-sync, or runtime/EDT operation.
+
+START
+1. Read this repository's .1c-ai/core/PACKAGE_REFRESH.md at an exact Git SHA.
+2. Read only the target repository's AGENTS.md, PROJECT_AI.md, package-owned
+   .1c-ai/** and .agents/skills/1c-ai-*/**, and necessary project policy.
+3. Resolve target remote HEAD, accepted integration base, target local checkout,
+   installed MethodologyPackage SHA, and methodology source SHA.
+4. If a mature project already has a different canonical instruction owner,
+   classify NONE/SELECTIVE/FULL. Never replace the owner's instructions.
+5. Verify the new source commit is accepted and reachable; no floating-branch
+   copy. Current upstream plugin/tool guides win over old capability examples.
+
+SAFE IMPLEMENTATION
+On a clean, isolated feature branch from the project's accepted integration
+branch, use scripts/refresh_existing_package.py from a methodology Git clone:
+--source <method-clone> --target <project-checkout> --source-sha <40-char-SHA>
+Run PLAN without --apply first. Read all changed paths and conflicts.
+Apply only after the target project's update request authorizes these exact
+package-owned paths and plan is conflict-free; rerun with --apply.
+Do not overwrite a project-edited package file, force-resolve a conflict,
+replace root adapters, or overwrite non-1c-ai-* skills.
+For first install or nonstandard overlay, STOP and use ADOPTION.md; this
+script does not install/uninstall. Keep project 1C source and runtime untouched.
+
+DELIVERY AND LOCAL HONESTY
+Verify package exact file content, new PROJECT_AI.md pin, git diff, unchanged
+project-owned skills/policy, and tests applicable to this documentation task.
+Commit/push the feature branch, open a PR to the project's accepted integration
+branch; never merge/reset/force-push without project authorization.
+If executing in a cloud checkout, report LOCAL_SYNC=UNKNOWN. A separate
+authorized local executor must fetch/pull the accepted Git commit and verify
+local HEAD, worktree, and pin before claiming local synchronization.
+Do not claim EDT/build/runtime tests for a docs/skill-only update.
+
+REPORT
+Return a compact technical completion report, a short Russian user summary,
+and one detailed Markdown evidence report in the task's durable destination
+(default GitHub Issue/PR; also Drive when the target project requires it).
+Include exact source/old/new Git SHAs, files, plan/conflicts, test results,
+local-sync evidence or UNKNOWN, PR/merge state, and any blockers.
