@@ -20,3 +20,5 @@ jobs:
           persist-credentials: false
       - name: Validate repository contracts
         run: python3 scripts/validate_repository.py
+      - name: Pinned refresh helper contract tests
+        run: python3 -m unittest discover -s tests -p 'test_refresh_existing_package.py' -v
