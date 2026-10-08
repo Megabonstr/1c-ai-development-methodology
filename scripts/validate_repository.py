@@ -12,12 +12,14 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_PATHS = [
     "README.md",
     "AGENT_START.txt",
+    "PROJECT_REFRESH_AGENT_START.txt",
     "AGENTS.md",
     "CLAUDE.md",
     "GEMINI.md",
     ".github/copilot-instructions.md",
     ".1c-ai/START_HERE.md",
     ".1c-ai/core/ADOPTION.md",
+    ".1c-ai/core/PACKAGE_REFRESH.md",
     ".1c-ai/core/DELIVERY_DISCIPLINE.md",
     ".1c-ai/core/EVIDENCE_MODEL.md",
     ".1c-ai/core/GIT_GITHUB_FLOW.md",
@@ -50,6 +52,7 @@ REQUIRED_PATHS = [
     "docs/ru/SOURCES_AND_ADOPTION.md",
     "docs/ru/USEFUL_LINKS.md",
     "docs/ru/DELIVERY_DISCIPLINE.md",
+    "docs/ru/PROJECT_REFRESH.md",
     "docs/ru/ONE_C_TASK_PREFLIGHT.md",
     "docs/ru/TASK_FRAMING.md",
     "docs/architecture/REPOSITORY_MODEL.md",
@@ -60,6 +63,8 @@ REQUIRED_PATHS = [
     ".github/pull_request_template.md",
     ".github/workflows/validate-repository.yml",
     "scripts/validate_repository.py",
+    "scripts/refresh_existing_package.py",
+    "tests/test_refresh_existing_package.py",
 ]
 
 EXPECTED_SKILLS = [
